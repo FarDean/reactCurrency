@@ -1,11 +1,13 @@
 import React from 'react'
 
-export default function CurrencyRow() {
+export default function CurrencyRow({amount,handleAm,currenctyOption,selectedCurrency,onChangeCurrency}) {
     return (
         <div>
-            <input type="number"/>
-            <select name="" id="">
-                <option value="Hi">Hi</option>
+            <input type="number" value={amount} onChange={handleAm} />
+            <select name="" id="" value={selectedCurrency} onChange={onChangeCurrency}>
+                {currenctyOption.map(option=>(
+                    <option key={option} value={option}>{option}</option>
+                ))}
             </select>
         </div>
     )
